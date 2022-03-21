@@ -1,29 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
-
-
 {
-   
+    [SerializeField]
+    private TextMeshProUGUI usernameField;
 
-    // Start is called before the first frame update
-    void Start()
+    public void PlayGame()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void StartGame()
-    {
+        GameManager.Instance.Name = usernameField.text;
         SceneManager.LoadScene(1);
     }
 }
